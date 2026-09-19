@@ -29,7 +29,7 @@ function login(username, password) {
   }
 
   // So khớp tài khoản và mật khẩu hợp lệ (lưu ý '123' là chuỗi)
-  if (trimmedUser === 'admin' && trimmedPass === '123') {
+  if (trimmedUser === 'admin' && trimmedPass === '1234') {
     return true;
   }
 
