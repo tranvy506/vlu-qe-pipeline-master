@@ -28,7 +28,7 @@ function login(username, password) {
   }
 
   // Đăng nhập hợp lệ: admin / 123
-  if (trimmedUser === 'admin' && trimmedPass === '1234') {
+  if (trimmedUser === 'admin' && trimmedPass === '12345') {
     return true;
   }
 
