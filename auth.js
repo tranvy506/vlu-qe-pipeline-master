@@ -4,13 +4,13 @@
 const LOCKED_ACCOUNTS = ['locked_user', 'banned_user'];
 
 /**
- * Kiểm tra đăng nhập
+ * Kiểm tra thông tin đăng nhập
  * @param {string} username 
  * @param {string} password 
  * @returns {boolean}
  */
 function login(username, password) {
-  // Ngoại lệ: username hoặc password rỗng/không phải chuỗi
+  // Kiểm tra kiểu dữ liệu đầu vào
   if (typeof username !== 'string' || typeof password !== 'string') {
     return false;
   }
@@ -18,23 +18,25 @@ function login(username, password) {
   const trimmedUser = username.trim();
   const trimmedPass = password.trim();
 
+  // Không được để trống
   if (!trimmedUser || !trimmedPass) {
     return false;
   }
 
-  // Ngoại lệ: tài khoản bị khóa
+  // Tài khoản bị khóa
   if (LOCKED_ACCOUNTS.includes(trimmedUser)) {
     return false;
   }
 
-  // Đăng nhập hợp lệ: admin / 123
-  if (trimmedUser === 'admin' && trimmedPass === '1234') {
+  // So khớp tài khoản và mật khẩu hợp lệ (lưu ý '123' là chuỗi)
+  if (trimmedUser === 'admin' && trimmedPass === '123') {
     return true;
   }
 
   return false;
 }
 
+// Xuất hàm để Jest nhận diện khi chạy test
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = { login };
 }
