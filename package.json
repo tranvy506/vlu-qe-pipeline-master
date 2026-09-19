@@ -4,10 +4,10 @@
   "description": "Smoke and Regression unit tests for login function using Jest",
   "main": "auth.js",
   "scripts": {
-    "test": "jest",
-    "test:smoke": "jest auth.smoke.test.js",
-    "test:regression": "jest auth.regression.test.js"
-  },
+  "test": "jest",
+  "test:smoke": "jest auth.smoke.test.js",
+  "test:regression": "jest auth.regression.test.js"
+},
   "keywords": ["jest", "smoke-test", "regression-test", "unit-test"],
   "author": "",
   "license": "ISC",
